@@ -3,6 +3,7 @@ include("../assignment5/config.php");
 $query = "SELECT * FROM STUDENTS";
 $exec = mysqli_query($con, $query);
 
+// for fetching the elements in an array
 $array = mysqli_fetch_all($exec, MYSQLI_ASSOC);
 
 ?>
@@ -13,40 +14,40 @@ $array = mysqli_fetch_all($exec, MYSQLI_ASSOC);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-		ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Index page</title>
 </head>
 
 <body class="jumbotron">
     <p style="text-align: center;"><i class="fa fa-star fa-spin" aria-hidden="true"></i><i class="fa fa-home fa-4x" aria-hidden="true"></i>
-    
     <i class="fa fa-star fa-spin" aria-hidden="true"></i></p>
     <div class="container row col">
-    <form action="./insert.php" method="post" class="col col-lg-4">
-    <div class="alert alert-primary" role="alert">
-        <strong>INSERT</strong>
-    </div>
-        <label for="first_name">Enter first name</label>
-        <input type="text" name="first_name" class="form-control" >
-        <br>
-        <label for="last_name">Enter Last name</label>
-        <input type="text" name="last_name" class="form-control">
-        <br>
-        <label for="phone">Enter phone name</label>
-        <input type="number" name="phone" class="form-control">
-        <br>
-        <button class="btn btn-primary">INSERT STUDENT</button>
-    </form>
+    	
+		<form action="./insert.php" method="post" class="col col-lg-4">
+			<div class="alert alert-primary" role="alert">
+				<strong>INSERT</strong>
+			</div>
+			<label for="first_name">Enter first name</label>
+			<input type="text" name="first_name" class="form-control" >
+			<br>
+			<label for="last_name">Enter Last name</label>
+			<input type="text" name="last_name" class="form-control">
+			<br>
+			<label for="phone">Enter phone name</label>
+			<input type="number" name="phone" class="form-control">
+			<br>
+			<button class="btn btn-primary">INSERT STUDENT</button>
+		</form>
     
-    <!--  FORM FOR UPDATE STUDENT -->
+    <!--  FORM FOR UPDATING THE STUDENT -->
 
     <form action="./update.php" method="post" class="col col-lg-4">
     
-    <div class="alert alert-success" role="alert">
-        <strong>UPDATE</strong>
-    </div>
-    <label for="update_select">Please select a name to update</label>
+		<div class="alert alert-success" role="alert">
+			<strong>UPDATE</strong>
+		</div>
+		<label for="update_select">Please select a name to update</label>
         <select name="id" class="form-control">
             <?php
             foreach ($array as $row2) {
@@ -55,12 +56,10 @@ $array = mysqli_fetch_all($exec, MYSQLI_ASSOC);
             ?>
         </select>
         <br>
-    <label for="last_name">Enter last name to update</label>
-
-        <input type="text" name="last_name" class='form-control'>
+		<label for="last_name">Enter last name to update</label>
+		<input type="text" name="last_name" class='form-control'>
         <br>
-    <label for="phone">Enter phone to update</label>
-        
+		<label for="phone">Enter phone to update</label>
         <input type="number" name="phone"class="form-control">
         <br>
         <button class="btn btn-success">UPDATE STUDENT </button>
@@ -68,12 +67,12 @@ $array = mysqli_fetch_all($exec, MYSQLI_ASSOC);
 
 
 
-    <!-- FORM FOR DELETE STUDENT -->
+    <!-- FORM FOR DELETING THE STUDENT -->
     <form action="./delete.php" method="post" class='col col-lg-4'>
-    <div class="alert alert-danger" role="alert">
-        <strong>DELETE</strong>
-    </div>
-    <label for="id">Select name to delete</label>
+		<div class="alert alert-danger" role="alert">
+			<strong>DELETE</strong>
+		</div>
+		<label for="id">Select name to delete</label>
 
         <select name="id" id="" class="form-control">
             <?php
@@ -85,17 +84,13 @@ $array = mysqli_fetch_all($exec, MYSQLI_ASSOC);
         <br>
         <button name="delete_btn" class="btn btn-danger" value="del">DELETE <i class="fa fa-trash" aria-hidden="true"></i></button>
     </form>
-    </div>
 
+    </div>
+<!-- end of	/container	 -->
 
     <div class="card-columns" style="padding-top:  30px;">
-
             <?php 
-            
             foreach ($array as $row1) {
-                
-          
-            
             ?>
         <div class="card">
             <div class="card-body">
@@ -108,6 +103,7 @@ $array = mysqli_fetch_all($exec, MYSQLI_ASSOC);
             }
         ?>
     </div>
+<!--  end of / card-columns	 -->
 </body>
  <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
