@@ -11,21 +11,21 @@
   </head>
   <body>
       <div class="container card-body">
-      <div class="alert alert-info" role="alert">
-          <strong>You Can Login Here</strong>
-      </div>
-       <form action="u-login.php" method="GET">
-        <div class="form-group">
-          <label for="u-name">Enter Name</label>
-          <input type="text"
-            class="form-control" name="u-name" id="u-name" aria-describedby="helpId" placeholder="">
+        <div class="alert alert-info" role="alert">
+            <strong>You Can Login Here</strong>
         </div>
-        <div class="form-group">
-          <label for="u-pass">Enter Password my dear</label>
-          <input type="text"
-            class="form-control" name="u-pass" id="u-pass" aria-describedby="helpId" placeholder="">
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+         <form action="u-login.php" method="GET">
+            <div class="form-group">
+              <label for="u-name">Enter Name</label>
+              <input type="text"
+                class="form-control" name="u-name" id="u-name" aria-describedby="helpId" placeholder="">
+            </div>
+            <div class="form-group">
+              <label for="u-pass">Enter Password my dear</label>
+              <input type="text"
+              class="form-control" name="u-pass" id="u-pass" aria-describedby="helpId" placeholder="">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
        </form>
       </div>
     <!-- Optional JavaScript -->
